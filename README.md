@@ -17,6 +17,9 @@ http://localhost:8080/minitest/login?userId=1
 
 Increasing Trouble
 http://localhost:8081/minitest/login?userId=-1
+
 http://localhost:8081/minitest/login?userId='
+
 http://localhost:8081/minitest/login?userId=1%20OR%201=1
+
 http://localhost:8081/minitest/login?userId=</h1>%20<br/><img%20src="http://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"/>
