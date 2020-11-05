@@ -31,7 +31,7 @@ jobs:
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
-        # edit - set to full to support small demos
+        # edit - set to full to support small demos .
         params: --checkmarx.incremental=false
     # Upload the Report for CodeQL/Security Alerts
     - name: Upload SARIF file
