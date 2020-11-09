@@ -33,7 +33,7 @@ jobs:
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         # edit - set to full to support small demos .
         github_token: ${{secrets.GH_TOKEN}}
-        preset: "XSS and SQLi only"
+        preset: "High and Medium"
         incremental: false
         params: --checkmarx.incremental=false --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }}  --branch=${{ github.ref }} --cxflow.bug-tracker=GitHub
         # Upload the Report for CodeQL/Security Alerts
