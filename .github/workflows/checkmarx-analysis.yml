@@ -31,13 +31,21 @@ jobs:
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
+        sca_api_url: https://api.scacheckmarx.com
+        sca_app_url: https://sca.scacheckmarx.com
+        sca_access_control_url: https://platform.checkmarx.net
+        sca_tenant: SCA-CHampions  # <-- Insert Checkmarx CxSCA Tenant
+        sca_username: ${{ secrets.CHECKMARX_SCA_USERNAME }} # To be stored in GitHub Secrets.
+        sca_password: ${{ secrets.CHECKMARX_SCA_PASSWORD }} # To be stored in GitHub Secrets.
+        break_build: false
+        scanners: sca,sast
         # edit - set to full to support small demos .
         github_token: ${{secrets.GH_TOKEN}}
         preset: "High and Medium"
         incremental: false
-        params: --checkmarx.incremental=false --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }}  --branch=${{ github.ref }} --cxflow.bug-tracker=GitHub
+        params: --checkmarx.incremental=false --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }}  --branch=${{ github.ref }} --cxflow.bug-tracker=GitHub --repo-url="https://github.com/bailiwick99/minitest" --cx-flow.filterSeverity --cx-flow.filterCategory
         # Upload the Report for CodeQL/Security Alerts
-#    - name: Upload SARIF file
-#     uses: github/codeql-action/upload-sarif@v1
+#   - name: Upload SARIF file
+#      uses: github/codeql-action/upload-sarif@v1
 #     with:
 #       sarif_file: cx.sarif
